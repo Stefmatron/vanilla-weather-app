@@ -1,0 +1,33 @@
+.box {
+  max-width: 600px;
+  min-width: 600px;
+  margin: 20px 0px;
+  padding: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: rgb(135, 135, 135);
+  font-size: 25px;
+}
+
+li {
+  color: rgb(135, 135, 135);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 100;
+  text-align: left;
+}
+small {
+  margin-top: 60px;
+}
+.temperature {
+}

@@ -16,33 +16,36 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <h1>Argenthal</h1>
-    <ul>
-      <li>Montag 11:30</li>
-      <li>clear</li>
-    </ul>
-    <div class="row">
-      <div class="col-6">
-        <img src="./src/icons/icon.sun.png" alt="sun icon" />
-        15°C | °F
-      </div>
-      <div class="col-6">
+    <div class="container">
+      <div class="box">
+        <h1>Argenthal</h1>
         <ul>
-          <li>Precipitation 0%</li>
-          <li>Humidity: 73%</li>
-          <li>Wind: 2 km/h</li>
+          <li>Montag 11:30</li>
+          <li>clear</li>
         </ul>
+        <div class="row">
+          <div class="col-5">
+            <img src="./src/icons/icon.sun.png" alt="sun icon" />
+            <span class="temperature"><strong>15</strong>°C | °F</span>
+          </div>
+          <div class="col-5">
+            <ul>
+              <li>Precipitation 0%</li>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2 km/h</li>
+            </ul>
+          </div>
+        </div>
       </div>
+      <small>
+        <a
+          href="https://github.com/Stefmatron/vanilla-weather-app"
+          target="_blank"
+          >Open-source code</a
+        >
+        by Stefanie Ginder
+      </small>
     </div>
-    <small>
-      <a
-        href="https://github.com/Stefmatron/vanilla-weather-app"
-        target="_blank"
-      >
-        Open-source code</a
-      >
-      by Stefanie Ginder
-    </small>
     <script src="./src/index.js"></script>
   </body>
 </html>
