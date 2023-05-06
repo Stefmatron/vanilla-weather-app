@@ -15,24 +15,32 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../src/index.js"></script>
   <body>
-    <div></div>
     <div class="container">
       <div class="box">
-        <h1>Argenthal</h1>
+        <div class="row">
+          <div class="col-5">
+            <h1 id="cityName"> Argenthal</h1>
+          </div>
+        <div class="col-7">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Type a city..." aria-label="type a city" aria-describedby="button">
+             <button class="btn btn-outline-secondary" type="button" id="button">Search</button>
+          </div>
+        </div>
+      </div>
         <ul>
-          <li>Montag 11:30</li>
-          <li>clear</li>
+          <li>Monday 11:30</li>
+          <li id="cityDes"> clear</li>
         </ul>
         <div class="row">
           <div class="col-5">
-            <img src="../src/icons/icon.sun.png" alt="sun icon" />
-            <strong>15</strong><small>°C | °F</small>
+            <img id="cityIcon" src="../src/icons/icon.sun.png" alt="sun icon" />
+            <strong id="cityDeg"> 15</strong><small>°C | °F</small>
           </div>
           <div class="col-5">
             <ul>
-              <li>Precipitation 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2 km/h</li>
+              <li>Humidity: <span id="cityHum">70</span>%</li>
+              <li> Wind: <span id="cityWin">2</span> km/h</li>
             </ul>
           </div>
         </div>
@@ -41,8 +49,7 @@
         <a
           href="https://github.com/Stefmatron/vanilla-weather-app"
           target="_blank"
-          >Open-source code</a
-        >
+          >Open-source code</a>
         by Stefanie Ginder
       </small>
     </div>
