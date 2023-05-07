@@ -1,5 +1,3 @@
-
-
 function currentTemp(response) {
     let TempElement = document.querySelector("#cityDeg");
     let cityElement = document.querySelector("#cityName");
@@ -12,33 +10,64 @@ function currentTemp(response) {
     humElement.innerHTML = response.data.temperature.humidity;
     console.log('#', response.data.temperature.current);
 
+    celsiusTemp = response.data.temperature.current;
+
     cityElement.innerHTML = response.data.city;
     desElement.innerHTML = response.data.condition.description;
     windElement.innerHTML = Math.round (response.data.wind.speed);
-    citIcon.innerHTML = response.data.condition.icon_url;
-    
+    citIcon.setAttribute("src", response.data.condition.icon_url);
 }
-
-//function initData() {
-    //axios.get(apiUrl).then(currentTemp);
-//}
-
-// funktion aufrufen, damit sie ausgeführt wird
-//initData();
-
 
 function search(city) {
-    let apiKey = "6af364afb0c9b134to765939b0fbbf44";
-    let query = "city";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=metric`;
+    console.log(city);
+    let apiUrl = getApiData(city);
     axios.get(apiUrl).then(currentTemp);
-    }
-
-function inputCity(event) {
-    //event.preventDefault();
-    let cityInput = document.querySelector("#form-control");
-    search(cityInput.value);
+    let h1 = document.querySelector("#cityName");
+    h1.innerHTML = city; return false;
 }
 
+function inputCity(event) {
+    let cityInput = document.querySelector(".form-control");
+    search(cityInput.value); return false;
+}
+
+function showFahrenheit(event) {
+    let tempElement = document.querySelector("#cityDeg");
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    tempElement.innerHTML = Math.round (fahrenheitTemp);
+}
+
+function showCelsius(event) {
+    let tempElement = document.querySelector("#cityDeg");
+    tempElement.innerHTML = Math.round (celsiusTemp);
+}
+
+function initData() {
+    let city = "Argenthal";
+    let apiUrl = getApiData(city);
+    axios.get(apiUrl).then(currentTemp);
+}
+
+function getApiData(city) {
+    let apiKey = "6af364afb0c9b134to765939b0fbbf44";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    return apiUrl;
+}
+
+function enter(event) {
+    console.log('##', event);
+    if (event.keyCode === 13) {
+        document.querySelector("#button").click();
+    }
+}
+
+initData();
+
+let searchField = document.querySelector(".form-control");
+searchField.addEventListener("keypress", enter);
+
 let form = document.querySelector("#button");
-form.addEventListener("submit", inputCity);
+form.addEventListener("click", inputCity);
+
+
+
