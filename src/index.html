@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="../src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+  </head>
   <body>
     <div class="container">
       <div class="box">
@@ -21,28 +21,40 @@
           <div class="col-5">
             <h1 id="cityName"> Argenthal</h1>
           </div>
-        <div class="col-7">
-          <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Type a city..." aria-label="type a city" aria-describedby="button">
-             <button class="btn btn-outline-secondary" type="button" id="button">Search</button>
+          <div class="col-7">
+            <div class="input-group mb-3">
+              <input 
+              type="text" 
+              class="form-control" placeholder="Type a city..." aria-label="type a city" aria-describedby="button" />
+              <button class="btn btn-outline-secondary" type="button" id="button">Search</button>
             </div>
+          </div>
         </div>
-      </div>
-        <ul>
-          <li>Monday 11:30</li>
-          <li id="cityDes"> clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-5">
-            <img id="cityIcon" width="70px" height= "70px" src="../src/icons/icon.sun.png" alt="sun icon" />
-            <strong id="cityDeg"> 15</strong><small><a id="celsius-link" onclick="showCelsius()">°C</a> | <a onclick="showFahrenheit()" id="fahrenheit-link">°F</a></small>
+          <ul>
+            <li>Monday 11:30</li>
+            <li id="cityDes"> clear</li>
+          </ul>
+          <div class="row">
+            <div class="col-5">
+              <img id="cityIcon" width="70px" height= "70px" src="../src/icons/icon.sun.png" alt="sun icon" />
+              <strong id="cityDeg"> 15</strong><small><a id="celsius-link" onclick="showCelsius()">°C</a> | <a onclick="showFahrenheit()" id="fahrenheit-link">°F</a></small>
+            </div>
+            <div class="col-5">
+              <ul>
+                <li>Humidity: <span id="cityHum">70</span>%</li>
+                <li> Wind: <span id="cityWin">2</span> km/h</li>
+              </ul>
+            </div>
           </div>
-          <div class="col-5">
-            <ul>
-              <li>Humidity: <span id="cityHum">70</span>%</li>
-              <li> Wind: <span id="cityWin">2</span> km/h</li>
-            </ul>
-          </div>
+          <div class="forecast">
+            <div class="row">
+            <div class="col-2">Thu</div>
+            <img src="../src/icons/rain-day.png" alt="rain-day" class="img-icon"/>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max"> 18° </span>
+              <span class="forecast-temp-min"> 12° </span>
+            </div>
+            </div>
         </div>
       </div>
       <small>
