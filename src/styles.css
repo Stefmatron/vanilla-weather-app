@@ -46,15 +46,18 @@ img {
 .forecast {
   margin-top: 20px;
   color: black;
-  font-size: 15px;
+  font-size: 13px;
+  width: 400px;
+}
+
+.col-2 {
+  text-align: center;
 }
 
 .forecast-temp-min {
   opacity: 0.5;
 }
 .img-icon {
-  max-width: 82px;
-  max-height: 82px;
-  text-align: left;
-
+  max-width: 52px;
+  max-height: 52px;
 }
