@@ -61,13 +61,37 @@ function enter(event) {
     }
 }
 
+function currentTemp() {
+    let forecastElement = document.querySelector("#forecastDays");
+
+    let day = ["Thu", "Fri", "Sat", "Sun"];
+
+    let forecastHTML = `<div class="row">`;
+    day.forEach(function (day) {
+        forecastHTML =
+            forecastHTML +
+            `
+            <div class="col-2">
+              <div class="forecastDays">${day}</div>
+            <img src="../src/icons/rain-day.png" alt="rain-day" class="img-icon"/>
+            <div class="forecast-temp">
+              <span class="forecast-temp-max"> 18° </span>
+              <span class="forecast-temp-min"> 12° </span>
+            </div>
+            </div>
+            `;
+        });
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+console.log(forecastHTML);
+    }
+
+
 initData();
+currentTemp();
 
 let searchField = document.querySelector(".form-control");
 searchField.addEventListener("keypress", enter);
 
 let form = document.querySelector("#button");
 form.addEventListener("click", inputCity);
-
-
-
