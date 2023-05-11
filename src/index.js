@@ -44,16 +44,6 @@ function inputCity(event) {
     search(cityInput.value); return false;
 }
 
-function showFahrenheit(event) {
-    let tempElement = document.querySelector("#cityDeg");
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    tempElement.innerHTML = Math.round (fahrenheitTemp);
-}
-
-function showCelsius(event) {
-    let tempElement = document.querySelector("#cityDeg");
-    tempElement.innerHTML = Math.round (celsiusTemp);
-}
 
 function initData() {
     let city = "Argenthal";
@@ -83,7 +73,6 @@ function formatDay(timestamp) {
 }
 
 function currentTemp(response) {
-    console.log('#daily', response.data);
     let currentForecast = response.data.daily;
     
     let forecastElement = document.querySelector("#forecastDays");
@@ -108,9 +97,6 @@ forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 console.log(forecastHTML);
     }
-
-
-
 
 initData();
 currentTemp();
