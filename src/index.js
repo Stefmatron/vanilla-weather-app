@@ -77,20 +77,20 @@ function enter(event) {
 function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
     return days[day];
 }
 
 function currentTemp(response) {
     console.log('#daily', response.data);
-    let currentForecast = response.data?.daily;
+    let currentForecast = response.data.daily;
     
     let forecastElement = document.querySelector("#forecastDays");
 
     let forecastHTML = `<div class="row">`;
     currentForecast.forEach(function (forecastDay, index) {
-    
+        if (index < 6 ) {
         forecastHTML =
             forecastHTML +
             `
@@ -103,7 +103,7 @@ function currentTemp(response) {
             </div>
             </div>
             `;
-        });
+            }});
 forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 console.log(forecastHTML);
